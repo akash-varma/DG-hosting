@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>DayaGold</title>
+        <link rel="stylesheet" href="../../static/css/styles.css" />
+        <script src="../../static/js/index.js"> </script>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="login-container-items">
+              <form method="post" action="{%url 'firstApp:jewellery'%}">
+              {%csrf_token%}
+                <input type="text" onkeypress="return onlyAlphabet(event)" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit" class="login1-button-adjust">Login</button>
+                <button type="button" onclick = "openSign()" class="login1-button-adjust">New User</button>
+              </form>
+            </div>
+        </div>
+
+        <div id="sup" class="signup-container">
+          <div class="sform-container-items">
+            <div class="close-adjust">
+              <button onclick="closeSign()" class="close" title="Close">&times;</button>
+            </div>
+            <form method="post" action="{%url 'firstApp:register_user'%}">
+            {%csrf_token%}
+              <input type="text" onkeypress="return onlyAlphabet(event)" placeholder="Username" name="username" required>
+              <input type="text" onkeypress="return isNumberKey(event)" placeholder="Mobile No." name="mobile" required>
+              <input type="email" placeholder="Email" name="email" required>
+              <input type="text" placeholder="Address" name="address" required>
+              <input type="text" onkeypress="return isNumberKey(event)" placeholder="Age" name="age" required>
+              <input type="password" placeholder="Password" name="psw" required>
+              <button type="submit" class="login-button-adjust">SignUp</button>
+            </form>
+          </div>
+        </div>
+
+    </body>
+</html>
